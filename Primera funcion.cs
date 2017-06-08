@@ -29,6 +29,79 @@ namespace Practica1IPC2
             MessageBox.Show("la hipotenusa es: " + hipotenusa);
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string texto = textBox1.Text;
+            Boolean letraa = false;
+            Boolean letrae = false;
+            Boolean letrai = false;
+            Boolean letrao = false;
+            Boolean letrau = false;
 
+            for (int i = 0; i < texto.Length; i++)
+            {
+                if (texto[i].Equals((char)97) || texto[i].Equals((char)65) || texto[i].Equals((char)160))
+                {
+                    letraa = true;
+                }
+                if (texto[i].Equals((char)101) || texto[i].Equals((char)69) || texto[i].Equals((char)130))
+                {
+                    letrae = true;
+                }
+                if (texto[i].Equals((char)105) || texto[i].Equals((char)73) || texto[i].Equals((char)161))
+                {
+                    letrai = true;
+                }
+                if (texto[i].Equals((char)111) || texto[i].Equals((char)79) || texto[i].Equals((char)162))
+                {
+                    letrao = true;
+                }
+                if (texto[i].Equals((char)117) || texto[i].Equals((char)85) || texto[i].Equals((char)163))
+                {
+                    letrau = true;
+                }
+                else
+                {
+                    continue;
+                }
+            }
+
+            if (letraa == true)
+            {
+                if (letrae == true)
+                {
+                    if (letrai == true)
+                    {
+                        if (letrao == true)
+                        {
+                            if (letrau == true)
+                            {
+                                MessageBox.Show("La plabra " + texto + " SI CUMPLE");
+                            }
+                            else
+                            {
+                                MessageBox.Show("La plabra " + texto + " NO CUMPLE, falta la vocal u");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("La plabra " + texto + " NO CUMPLE, falta la vocal o");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("La plabra " + texto + " NO CUMPLE, falta la vocal i");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("La plabra " + texto + " NO CUMPLE, falta la vocal e");
+                }
+            }
+            else
+            {
+                MessageBox.Show("La plabra " + texto + " NO CUMPLE, falta la vocal a");
+            }
+        }
     }
 }
